@@ -2,7 +2,7 @@
 var date = new Date();
 var thisYear = date.getFullYear();
 
-var greeting = function () {
+var greeting = function() {
   var userName = prompt('Пожалуйста, напишите ваше имя') || 'Уважаемый';
   var userSurname = prompt('Пожалуйста, напишите вашу фамилию?') || 'пользователь';
   var userGreeting = userName + ' ' + userSurname + '!';

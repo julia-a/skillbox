@@ -1,12 +1,12 @@
 'use strict';
+const MIN_NUMBER = 1;
 const MAX_NUMBER = 10;
 
-const getRandomNumber = function(max) {
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max + 1));
+const getRandomNumber = function(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const randomNumber = getRandomNumber(MAX_NUMBER);
+const randomNumber = getRandomNumber(MIN_NUMBER, MAX_NUMBER);
 
 const isNum = function(n) {
   return !isNaN(parseFloat(n)) && isFinite(n); 
@@ -15,7 +15,7 @@ const isNum = function(n) {
 // Функция запрашивает ввод числа и передает его для сравнения с рандомным числом 
 // в следующую функцию numberСheck
 const getUserNumber = function() {
-  const inputNumber = prompt('Привет! Сыграем в игру? Я загадал число от 0 до 9. Попробуй отгадать его: введи в окошко ниже свой вариант и нажми «ОК».');
+  const inputNumber = prompt('Привет! Сыграем в игру? Я загадал число от 1 до 10. Попробуй отгадать его: введи в окошко ниже свой вариант и нажми «ОК».');
 
   if (inputNumber === null) {
     return alert('Пока! Как-нибудь сыграем ещё.');
